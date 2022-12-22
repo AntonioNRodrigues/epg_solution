@@ -16,7 +16,7 @@ public class ChannelConverter implements IConverter<Channel, ChannelDto> {
     @Override
     public Channel dtoToEntity(ChannelDto dto) {
         Channel channel = new Channel();
-        BeanUtils.copyProperties(channel, dto);
+        BeanUtils.copyProperties(dto, channel);
         return channel;
     }
 }
