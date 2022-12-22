@@ -1,7 +1,5 @@
 package com.epg.solution.models.dto;
 
-import com.epg.solution.models.entities.Channel;
-
 import java.time.Instant;
 
 
@@ -9,17 +7,17 @@ public class ProgramDto {
 
     private final Long id;
     private final String imagemUrl;
-    private final Channel channel;
+    private final Long channelId;
     private final String tittle;
     private final String description;
     private final Instant startTime;
     private final Instant endTime;
 
 
-    public ProgramDto(Long id, String imagemUrl, Channel channel, String tittle, String description, Instant startTime, Instant endTime) {
+    public ProgramDto(Long id, String imagemUrl, Long channelId, String tittle, String description, Instant startTime, Instant endTime) {
         this.id = id;
         this.imagemUrl = imagemUrl;
-        this.channel = channel;
+        this.channelId = channelId;
         this.tittle = tittle;
         this.description = description;
         this.startTime = startTime;
@@ -30,8 +28,8 @@ public class ProgramDto {
         return imagemUrl;
     }
 
-    public Channel getChannel() {
-        return channel;
+    public Long getChannelId() {
+        return channelId;
     }
 
     public String getTittle() {

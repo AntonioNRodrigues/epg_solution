@@ -7,5 +7,5 @@ import java.util.Collection;
 
 public interface ProgramRepository extends JpaRepository<Program, Long> {
 
-    Collection<Program> getAllByChannel(Long channelId);
+    Collection<Program> getAllProgramsByChannelId(Long channelId);
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ProgramConverter implements IConverter<Program, ProgramDto> {
     @Override
     public ProgramDto entityToDto(Program entity) {
-        return new ProgramDto(entity.getId(), entity.getImagemUrl(), entity.getChannel(), entity.getTittle(),
+        return new ProgramDto(entity.getId(), entity.getImagemUrl(), entity.getChannel().getId(), entity.getTittle(),
                 entity.getDescription(), entity.getStartTime(), entity.getEndTime());
     }
 

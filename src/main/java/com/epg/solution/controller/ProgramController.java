@@ -26,7 +26,13 @@ public class ProgramController {
     @PostMapping(path = "/create", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<ProgramDto> createProgram(@RequestBody ProgramDto dto) {
         try {
-            return new ResponseEntity<>(programService.createProgram(dto), HttpStatus.CREATED);
+            ProgramDto programDto = programService.createProgram(dto);
+            if (programDto != null) {
+                return new ResponseEntity<>(programDto, HttpStatus.CREATED);
+            } else {
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+
         } catch (Exception e) {
             logger.error("Problem creating program");
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
