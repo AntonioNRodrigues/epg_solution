@@ -26,4 +26,5 @@ hs_err_pid*
 
 logs/2022-12/
 
-/target/
+/target/*
+/target/classes/*
